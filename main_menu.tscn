@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp7asgy3luu3e"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_xte1b"]
+[ext_resource type="FontFile" uid="uid://dddxuhx680m5p" path="res://fonts/SourceCodePro-Black.ttf" id="1_ydiah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0yg8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpj2y"]
+font = ExtResource("1_ydiah")
+font_size = 96
+
+[node name="Main Menu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xte1b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ColorRect/CenterContainer/PanelContainer"]
+custom_minimum_size = Vector2(518, 648)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k0yg8")
+
+[node name="Text Container(Vert)" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = -317.0
+offset_right = 835.0
+offset_bottom = 648.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/CenterContainer/PanelContainer/Panel/Text Container(Vert)"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Panel/Text Container(Vert)/CenterContainer"]
+layout_mode = 2
+text = "MAIN MENU"
+label_settings = SubResource("LabelSettings_fpj2y")
+
+[node name="NEW STORY" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = 51.0
+offset_top = 211.0
+offset_right = 459.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("1_ydiah")
+theme_override_font_sizes/font_size = 74
+text = "NEW STORY"
+
+[node name="QUIT" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = 56.0
+offset_top = 459.0
+offset_right = 464.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("1_ydiah")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+
+[node name="ABOUT" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = 53.0
+offset_top = 330.0
+offset_right = 461.0
+offset_bottom = 419.0
+theme_override_fonts/font = ExtResource("1_ydiah")
+theme_override_font_sizes/font_size = 64
+text = "ABOUT"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Panel/NEW STORY" to="." method="_on_new_story_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Panel/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Panel/ABOUT" to="." method="_on_about_pressed"]

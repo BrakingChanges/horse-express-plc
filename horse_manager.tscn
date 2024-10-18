@@ -1,0 +1,179 @@
+[gd_scene load_steps=11 format=3 uid="uid://cp2jti2ftq07v"]
+
+[ext_resource type="Script" path="res://horse_manager.gd" id="1_3memh"]
+[ext_resource type="FontFile" uid="uid://dddxuhx680m5p" path="res://fonts/SourceCodePro-Black.ttf" id="1_t1e2f"]
+[ext_resource type="FontFile" uid="uid://ceciux2fd8ver" path="res://fonts/SourceCodePro-Medium.ttf" id="3_khq33"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnvdq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwajx"]
+font = ExtResource("3_khq33")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3hdh1"]
+font = ExtResource("1_t1e2f")
+font_size = 49
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxxif"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e57as"]
+bg_color = Color(0, 0.666667, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pgf"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4vrg"]
+font = ExtResource("3_khq33")
+
+[node name="Horse Manager" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3memh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Horses" type="Panel" parent="ColorRect/CenterContainer/PanelContainer"]
+custom_minimum_size = Vector2(879, 523)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tnvdq")
+
+[node name="DaysElapsed" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 483.0
+offset_right = 122.0
+offset_bottom = 506.0
+text = "Days: 0"
+label_settings = SubResource("LabelSettings_vwajx")
+
+[node name="Pages" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 451.0
+offset_right = 135.0
+offset_bottom = 474.0
+text = "Page 1/1"
+label_settings = SubResource("LabelSettings_vwajx")
+
+[node name="HORSE EPXRESS PLC LTD" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 24.0
+offset_right = 431.0
+offset_bottom = 92.0
+text = "HORSE MANAGER"
+label_settings = SubResource("LabelSettings_3hdh1")
+
+[node name="Horse Spots" type="Panel" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 2
+offset_left = 54.0
+offset_top = 97.0
+offset_right = 473.0
+offset_bottom = 445.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxxif")
+
+[node name="Horse Spot 1" type="Control" parent="ColorRect/CenterContainer/PanelContainer/Horses/Horse Spots"]
+anchors_preset = 0
+offset_right = 419.0
+offset_bottom = 87.0
+metadata/used = false
+
+[node name="Horse Spot 2" type="Control" parent="ColorRect/CenterContainer/PanelContainer/Horses/Horse Spots"]
+anchors_preset = 0
+offset_top = 87.0
+offset_right = 419.0
+offset_bottom = 174.0
+metadata/used = false
+
+[node name="Horse Spot 3" type="Control" parent="ColorRect/CenterContainer/PanelContainer/Horses/Horse Spots"]
+anchors_preset = 0
+offset_top = 174.0
+offset_right = 419.0
+offset_bottom = 261.0
+metadata/used = false
+
+[node name="Horse Spot 4" type="Control" parent="ColorRect/CenterContainer/PanelContainer/Horses/Horse Spots"]
+anchors_preset = 0
+offset_top = 261.0
+offset_right = 419.0
+offset_bottom = 348.0
+metadata/used = false
+
+[node name="Button" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 483.0
+offset_right = 864.0
+offset_bottom = 506.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_e57as")
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUY NEW HORSE"
+
+[node name="Prev Button" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 453.0
+offset_right = 404.0
+offset_bottom = 474.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5pgf")
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses/Prev Button"]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 21.0
+text = "< PREV"
+label_settings = SubResource("LabelSettings_x4vrg")
+
+[node name="Next Button" type="Button" parent="ColorRect/CenterContainer/PanelContainer/Horses"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 453.0
+offset_right = 471.0
+offset_bottom = 473.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5pgf")
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/Horses/Next Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "NEXT >"
+label_settings = SubResource("LabelSettings_x4vrg")
+
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Horses/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Horses/Prev Button" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/Horses/Next Button" to="." method="_on_next_button_pressed"]

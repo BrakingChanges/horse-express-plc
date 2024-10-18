@@ -1,0 +1,195 @@
+[gd_scene load_steps=15 format=3 uid="uid://c58bpahog528n"]
+
+[ext_resource type="Texture2D" uid="uid://n1imdd87qknl" path="res://horse_gallop.png" id="1_o4rjk"]
+[ext_resource type="Script" path="res://horse.gd" id="1_w1xg6"]
+[ext_resource type="FontFile" uid="uid://wpgpqyo08y0x" path="res://fonts/SourceCodePro-Regular.ttf" id="2_gugkk"]
+[ext_resource type="FontFile" uid="uid://ceciux2fd8ver" path="res://fonts/SourceCodePro-Medium.ttf" id="3_kvryr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b23xc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t1bs7"]
+font = ExtResource("2_gugkk")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1w64"]
+bg_color = Color(0.254902, 0.690196, 0.254902, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwn6q"]
+font = ExtResource("3_kvryr")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaklb"]
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkhxb"]
+font = ExtResource("3_kvryr")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it72t"]
+bg_color = Color(0, 0.666667, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64dyj"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppanq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1eyqu"]
+bg_color = Color(0.254902, 0.690196, 0.254902, 1)
+
+[node name="Horse" type="Control"]
+layout_mode = 3
+anchor_right = 0.363715
+anchor_bottom = 0.134259
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w1xg6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 419.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b23xc")
+
+[node name="HorseGallop" type="Sprite2D" parent="Panel"]
+position = Vector2(44, 43)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_o4rjk")
+
+[node name="Horse Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 6.0
+offset_right = 178.0
+offset_bottom = 29.0
+text = "HORSE 1"
+label_settings = SubResource("LabelSettings_t1bs7")
+text_overrun_behavior = 3
+
+[node name="Origin-destination" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 6.0
+offset_right = 408.0
+offset_bottom = 29.0
+text = "Nairobi-Cape Town"
+label_settings = SubResource("LabelSettings_t1bs7")
+
+[node name="horse status" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 29.0
+offset_right = 407.0
+offset_bottom = 52.0
+text = "↑ 5km/h"
+label_settings = SubResource("LabelSettings_t1bs7")
+
+[node name="distance" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 29.0
+offset_right = 323.0
+offset_bottom = 52.0
+text = "⇄5000km"
+label_settings = SubResource("LabelSettings_t1bs7")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 55.0
+offset_right = 167.0
+offset_bottom = 80.8
+theme_override_styles/normal = SubResource("StyleBoxFlat_s1w64")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/Button"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="Panel/Button/CenterContainer"]
+layout_mode = 2
+text = "BUY"
+label_settings = SubResource("LabelSettings_xwn6q")
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 55.0
+offset_right = 235.0
+offset_bottom = 80.8
+theme_override_styles/normal = SubResource("StyleBoxFlat_oaklb")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/Button2"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="Panel/Button2/CenterContainer"]
+layout_mode = 2
+text = "SELL"
+label_settings = SubResource("LabelSettings_nkhxb")
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 55.0
+offset_right = 328.0
+offset_bottom = 81.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_it72t")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/Button3"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="Panel/Button3/CenterContainer"]
+layout_mode = 2
+text = "UPGRADE"
+label_settings = SubResource("LabelSettings_nkhxb")
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 55.0
+offset_right = 394.0
+offset_bottom = 81.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_64dyj")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/Button4"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="Panel/Button4/CenterContainer"]
+layout_mode = 2
+text = "KILL"
+label_settings = SubResource("LabelSettings_nkhxb")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 25.0
+offset_right = 222.0
+offset_bottom = 52.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ppanq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1eyqu")

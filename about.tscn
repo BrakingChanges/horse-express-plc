@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://do24uui557mfw"]
+
+[ext_resource type="FontFile" uid="uid://ceciux2fd8ver" path="res://fonts/SourceCodePro-Medium.ttf" id="1_whksg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbnw8"]
+font = ExtResource("1_whksg")
+font_size = 40
+
+[node name="About" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 315.0
+offset_bottom = 147.0
+text = "ABOUT"
+label_settings = SubResource("LabelSettings_nbnw8")
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 176.0
+offset_right = 1401.0
+offset_bottom = 389.0
+text = "To the player of this game, thank you for 
+joining the alpha program of the game. The game 
+is still currently in development and I would 
+highly appreciate if you report issues via the 
+game pages and links :)"
+label_settings = SubResource("LabelSettings_nbnw8")
