@@ -1,6 +1,17 @@
 # Horse Express PLC
 Horse Express PLC is a business-oriented game about horse-riding accross vast distances. Currently dosen't include monetary system or accurate land-only traversal but is now assumed that horses have a special water kit upgrade to walk on water
 
+# Features
+- Random City Extraction
+- Pagination
+- Random name generation
+- Persisentency(game saves) *Not fully functional*
+
+# Screenshots
+![Main Menu](image.png)
+![Business Area](image-1.png)
+![Page 1](image-2.png)
+![Paging Functionality](image-3.png)
 
 # Built With
 - [Godot 4.3](https://godotengine.org)
